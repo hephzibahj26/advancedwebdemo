@@ -1,0 +1,30 @@
+package ie.dbs.advancedwebdemo.order;
+
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
+@RestController
+@RequestMapping("/orders")
+public class OrderController {
+    private final OrderService orderService;
+
+    public OrderController(OrderService orderService) {
+        this.orderService = orderService;
+    }
+
+    @GetMapping
+    public List<Order> getAllOrders() {
+        return orderService.getAllOrders();
+    }
+
+    @PostMapping
+    public String createOrder(@RequestBody Order order) {
+        orderService.createOrder(order);
+        return "Order created successfully!";
+    }
+
+    @PostMapping("/total")
+    public double calculateTotal(@RequestBody Order order) {
+        return orderService.calculateTotal(order);
+    }
+}

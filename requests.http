@@ -1,0 +1,31 @@
+POST http://localhost:8080/orders
+Content-Type: application/json
+
+{
+  "id": 1,
+  "productName": "Laptop",
+  "price": 750.00,
+  "quantity": 2
+}
+
+###
+POST http://localhost:8080/orders
+Content-Type: application/json
+
+{
+  "id": 2,
+  "productName": "Keyboard",
+  "price": 45.00,
+  "quantity": 3
+}
+
+###
+POST http://localhost:8080/orders/total
+Content-Type: application/json
+
+{
+  "id": 1,
+  "productName": "Laptop",
+  "price": 750.00,
+  "quantity": 2
+}
