@@ -19,5 +19,9 @@ public class HelloController {
     public String student(@RequestParam String name) {
         return "Welcome " + name;
     }
-
+    @GetMapping("/course")
+    public String course() {
+        return "BSc Computing - Advanced Web Development";
+    }
 }
+
